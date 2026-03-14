@@ -181,42 +181,86 @@ export default function SectionVisualisation({ onNavigate }) {
             <div className="text-sm font-medium text-gray-700 mb-4 pb-2 border-b border-gray-200">
               Live data preview — sample dataset
             </div>
-            <div className="card mb-4">
-              <div className="text-xs font-semibold tracking-widest uppercase text-gray-700 mb-4">Expertise areas represented</div>
-              <ResponsiveContainer width="100%" height={200}>
-                <BarChart data={expertiseData} layout="vertical" margin={{ left: 20, right: 20 }}>
-                  <XAxis type="number" tick={{ fontSize: 11, fill: '#888' }} />
-                  <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fill: '#555' }} width={160} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Bar dataKey="value" radius={[0, 4, 4, 0]}>
-                    {expertiseData.map((_, i) => <Cell key={i} fill={i % 2 === 0 ? TEAL : ROSE} />)}
+            <div className="card mb-6 p-6">
+              <div className="flex items-center gap-2 mb-6">
+                <div className="w-2 h-6 bg-teal rounded-full"></div>
+                <div className="text-sm font-semibold tracking-wide text-gray-800">Expertise areas represented</div>
+              </div>
+              <ResponsiveContainer width="100%" height={320}>
+                <BarChart data={expertiseData} layout="vertical" margin={{ left: 10, right: 30, top: 10, bottom: 10 }} barCategoryGap={4}>
+                  <XAxis type="number" tick={{ fontSize: 11, fill: '#888' }} axisLine={false} tickLine={false} />
+                  <YAxis type="category" dataKey="name" tick={{ fontSize: 11, fill: '#555' }} width={180} axisLine={false} tickLine={false} />
+                  <Tooltip 
+                    contentStyle={{ fontSize: 12, borderRadius: 8, border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                    cursor={{ fill: '#f3f4f6' }}
+                  />
+                  <Bar dataKey="value" radius={[0, 6, 6, 0]} barSize={22}>
+                    {expertiseData.map((entry, i) => (
+                      <Cell key={`cell-${i}`} fill={COLORS[i % COLORS.length]} />
+                    ))}
                   </Bar>
                 </BarChart>
               </ResponsiveContainer>
             </div>
-            <div className="card mb-4">
-              <div className="text-xs font-semibold tracking-widest uppercase text-gray-700 mb-4">Leaders by sector</div>
-              <ResponsiveContainer width="100%" height={180}>
-                <PieChart>
-                  <Pie data={sectorData} dataKey="value" nameKey="name" cx="50%" cy="50%" outerRadius={60} label={({name, percent}) => `${name} ${(percent * 100).toFixed(0)}%`}>
-                    {sectorData.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
-                  </Pie>
-                  <Tooltip />
-                </PieChart>
-              </ResponsiveContainer>
-            </div>
-            <div className="card">
-              <div className="text-xs font-semibold tracking-widest uppercase text-gray-700 mb-4">Leaders by region</div>
-              <ResponsiveContainer width="100%" height={160}>
-                <BarChart data={regionData} margin={{ left: 10, right: 20, bottom: 40 }}>
-                  <XAxis dataKey="name" tick={{ fontSize: 9, fill: '#555' }} angle={-30} textAnchor="end" interval={0} />
-                  <YAxis tick={{ fontSize: 11, fill: '#888' }} />
-                  <Tooltip contentStyle={{ fontSize: 12, borderRadius: 8 }} />
-                  <Bar dataKey="value" radius={[4, 4, 0, 0]}>
-                    {regionData.map((_, i) => <Cell key={i} fill={COLORS[i % COLORS.length]} />)}
-                  </Bar>
-                </BarChart>
-              </ResponsiveContainer>
+            <div className="grid md:grid-cols-2 gap-6 mb-6">
+              <div className="card p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-6 bg-rose rounded-full"></div>
+                  <div className="text-sm font-semibold tracking-wide text-gray-800">Leaders by sector</div>
+                </div>
+                <ResponsiveContainer width="100%" height={200}>
+                  <PieChart>
+                    <Pie 
+                      data={sectorData} 
+                      dataKey="value" 
+                      nameKey="name" 
+                      cx="50%" 
+                      cy="50%" 
+                      innerRadius={50}
+                      outerRadius={75} 
+                      paddingAngle={3}
+                      label={({name, percent}) => `${(percent * 100).toFixed(0)}%`}
+                      labelLine={false}
+                    >
+                      {sectorData.map((_, i) => (
+                        <Cell key={i} fill={COLORS[i % COLORS.length]} stroke="none" />
+                      ))}
+                    </Pie>
+                    <Tooltip 
+                      contentStyle={{ fontSize: 12, borderRadius: 8, border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                    />
+                  </PieChart>
+                </ResponsiveContainer>
+                <div className="flex flex-wrap justify-center gap-3 mt-2">
+                  {sectorData.map((item, i) => (
+                    <div key={item.name} className="flex items-center gap-1.5">
+                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: COLORS[i % COLORS.length] }}></div>
+                      <span className="text-xs text-gray-600">{item.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="card p-6">
+                <div className="flex items-center gap-2 mb-4">
+                  <div className="w-2 h-6 bg-purple-500 rounded-full"></div>
+                  <div className="text-sm font-semibold tracking-wide text-gray-800">Leaders by region</div>
+                </div>
+                <ResponsiveContainer width="100%" height={220}>
+                  <BarChart data={regionData} margin={{ left: 10, right: 20, bottom: 70, top: 10 }}>
+                    <XAxis dataKey="name" tick={{ fontSize: 10, fill: '#555' }} angle={-45} textAnchor="end" interval={0} axisLine={false} tickLine={false} />
+                    <YAxis tick={{ fontSize: 11, fill: '#888' }} axisLine={false} tickLine={false} />
+                    <Tooltip 
+                      contentStyle={{ fontSize: 12, borderRadius: 8, border: 'none', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}
+                      cursor={{ fill: '#f3f4f6' }}
+                    />
+                    <Bar dataKey="value" radius={[4, 4, 0, 0]} barSize={28}>
+                      {regionData.map((_, i) => (
+                        <Cell key={i} fill={COLORS[i % COLORS.length]} />
+                      ))}
+                    </Bar>
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </div>
         );
@@ -235,9 +279,11 @@ export default function SectionVisualisation({ onNavigate }) {
               <div className="grid sm:grid-cols-2 gap-4">
                 {featured.map(leader => (
                   <div key={leader.id} className="flex items-start gap-3 p-3 bg-gray-50 rounded-lg border border-gray-100">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-teal to-rose flex items-center justify-center text-white font-bold text-sm flex-shrink-0">
-                      {leader.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
-                    </div>
+                    <img 
+                      src={leader.image} 
+                      alt={leader.name}
+                      className="w-12 h-12 rounded-full object-cover flex-shrink-0"
+                    />
                     <div>
                       <div className="font-medium text-sm text-ink">{leader.name}</div>
                       <div className="text-xs text-gray-600">{leader.role}</div>
