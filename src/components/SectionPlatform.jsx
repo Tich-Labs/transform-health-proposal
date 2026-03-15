@@ -2,7 +2,7 @@ import React from 'react';
 
 const stack = [
   { layer: "Data layer", tool: "Google Sheets", cost: "$0 forever", detail: "The team edits profiles in a Google Sheet — a tool they already use. Each row is a leader. The free Sheets API serves data live to the frontend. No new accounts, no new tools, no record limits.", color: "bg-teal-light border-teal/20", badge: "bg-teal text-white" },
-  { layer: "Frontend", tool: "React + Tailwind CSS", cost: "$0 forever", detail: "A custom React application renders the public directory with full design control — matching Transform Health brand guidelines precisely. Built-in search, multi-filter, profile cards, map, and charts. Fully mobile-responsive and WCAG 2.1 accessible.", color: "bg-rose-light border-rose/20", badge: "bg-rose text-white" },
+  { layer: "Frontend", tool: "React + Tailwind CSS", cost: "$0 forever", detail: "A custom React application renders the public directory with full design control — matching Transform Health brand guidelines precisely. Built-in search, multi-filter, profile cards, map, and charts. Fully mobile-responsive (desktop + mobile) and WCAG 2.1 AA accessible.", color: "bg-rose-light border-rose/20", badge: "bg-rose text-white" },
   { layer: "Hosting", tool: "GitHub Pages", cost: "$0 forever", detail: "Deployed free to GitHub Pages. Delivered as a single iframe embed line for the Transform Health website. No server infrastructure, no DevOps, no ongoing maintenance cost.", color: "bg-amber-50 border-amber-200", badge: "bg-amber-500 text-white" },
   { layer: "Visualisation", tool: "Recharts + Leaflet.js", cost: "$0 forever", detail: "Open-source libraries for the world map (Leaflet / React Simple Maps) and expertise charts (Recharts). Both are free, well-documented, and integrate directly into the React frontend.", color: "bg-purple-50 border-purple-200", badge: "bg-purple-600 text-white" },
 ];
@@ -21,7 +21,7 @@ export default function SectionPlatform() {
       <div className="section-badge bg-teal-light text-teal-dark">Platform recommendation</div>
       <h2 className="text-4xl font-serif text-ink mb-4">Zero cost.<br /><span className="text-teal italic">No lock-in. No new tools.</span></h2>
       <p className="text-gray-600 text-lg mb-12 max-w-2xl">
-        The recommended stack keeps every layer at zero ongoing cost — using tools Transform Health's team almost certainly already knows.
+        The recommended stack keeps every layer at zero ongoing cost — using tools Transform Health's team almost certainly already knows. Delivers a fully responsive (desktop + mobile) directory, WCAG 2.1 AA accessible, at zero ongoing cost.
       </p>
 
       <div className="flex flex-col gap-4 mb-14">
@@ -42,7 +42,7 @@ export default function SectionPlatform() {
       </div>
 
       <h3 className="text-xl font-serif text-ink mb-4">Platform comparison</h3>
-      <div className="overflow-x-auto rounded-xl border border-gray-200">
+      <div className="overflow-x-auto rounded-xl border border-gray-200 mb-10">
         <table className="w-full text-sm">
           <thead className="bg-ink text-white">
             <tr>
@@ -61,6 +61,29 @@ export default function SectionPlatform() {
             ))}
           </tbody>
         </table>
+      </div>
+
+      <div className="grid md:grid-cols-2 gap-6 mb-8">
+        <div className="rounded-xl border-2 border-teal p-6 bg-teal-light/30">
+          <div className="text-xs font-bold text-teal mb-2">Option 1: Recommended</div>
+          <div className="font-serif text-lg text-ink mb-3">Google Sheets + React</div>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li className="flex gap-2"><span className="text-teal font-bold">✓</span> Zero ongoing cost</li>
+            <li className="flex gap-2"><span className="text-teal font-bold">✓</span> Team already knows Google Sheets</li>
+            <li className="flex gap-2"><span className="text-teal font-bold">✓</span> Full design control</li>
+            <li className="flex gap-2"><span className="text-teal font-bold">✓</span> Non-technical updates in minutes</li>
+          </ul>
+        </div>
+        <div className="rounded-xl border border-gray-200 p-6 bg-white">
+          <div className="text-xs font-bold text-gray-500 mb-2">Option 2: Alternative</div>
+          <div className="font-serif text-lg text-ink mb-3">Notion + React</div>
+          <ul className="text-sm text-gray-700 space-y-2">
+            <li className="flex gap-2"><span className="text-gray-400">•</span> Richer content handling</li>
+            <li className="flex gap-2"><span className="text-gray-400">•</span> Still zero cost</li>
+            <li className="flex gap-2"><span className="text-gray-400">•</span> If team prefers Notion</li>
+            <li className="flex gap-2"><span className="text-gray-400">•</span> Slightly more complex setup</li>
+          </ul>
+        </div>
       </div>
 
       <div className="mt-8 callout callout-teal">

@@ -20,6 +20,6 @@ export const NAV_SECTIONS = [
   { id: "visualisation", label: "Visualisation" },
   { id: "directory", label: "Directory Demo" },
   { id: "questions", label: "Discovery Qs" },
-  { id: "examples", label: "Past Projects" },
+  { id: "examples", label: "Profile" },
   { id: "fee", label: "Fee & Timeline" },
 ];

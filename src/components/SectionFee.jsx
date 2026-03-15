@@ -82,7 +82,7 @@ export default function SectionFee() {
         </p>
         <div className="flex flex-wrap gap-4 text-sm">
           <div><span className="text-white/40">Submitted by</span> <span className="font-medium">Naijeria Toweett</span></div>
-          <div><span className="text-white/40">Contact</span> <span className="font-medium">naijeria.toweett@[email]</span></div>
+          <div><span className="text-white/40">Contact</span> <span className="font-medium">naijeria@mamatech.co.ke</span></div>
         </div>
       </div>
     </div>

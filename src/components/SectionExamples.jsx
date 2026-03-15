@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 
 const examples = [
   {
-    id: "rafikey", order: "01", priority: "Lead with this",
-    title: "AskRafikey", subtitle: "Youth SRHR Health Companion · Kenya · 5-org coalition",
+    id: "rafikey", order: "01", priority: "Product 1",
+    title: "AskRafikey", subtitle: "Youth SRHR Health Companion · Kenya · 7-org coalition",
     priorityColor: "bg-teal text-white",
-    summary: "A public-facing youth health platform built within a 5-organisation health coalition — combining AI-powered SRHR information, 18 verified topic areas, a GPS-based service finder, and a full admin CMS enabling coalition staff to update verified content with zero developer dependency post-launch.",
+    summary: "A public-facing youth health platform built within a 7-organisation health coalition — combining AI-powered SRHR information, 18 verified topic areas, a GPS-based service finder, and a full admin CMS. The AI bot is retrained instantly by uploading new content and clicking a button — no developer needed for ongoing updates.",
     link: "https://rafikey-portfolio.lovable.app",
     linkLabel: "View case study →",
-    videoNote: "Full admin dashboard walkthrough available via Google Drive on request",
+    videoLink: "https://drive.google.com/file/d/17TNt35CkR-pn1wF9QJW5dmDgJPienuKZ/view",
     matches: [
       "Admin CMS for non-technical coalition staff — exact requirement Transform Health states",
       "Public-facing product designed for excluded, low-literacy users — equity-first design",
@@ -19,7 +19,7 @@ const examples = [
     tags: ["Coalition CMS", "Public-facing product", "Search & filtering", "Non-technical handover", "Global health"],
   },
   {
-    id: "nairobi", order: "02", priority: "Second",
+    id: "nairobi", order: "02", priority: "Product 2",
     title: "NairobiTalks", subtitle: "GovTech Civic Platform · World Bank · Nairobi County Government",
     priorityColor: "bg-purple-600 text-white",
     summary: "A civic tech platform conceived, designed, and shipped during a 1.5-day co-design sprint with the World Bank and Nairobi County Government. Features a filterable admin dashboard, public citizen discovery interface, and full handover documentation designed for non-technical county IT teams.",
@@ -33,10 +33,10 @@ const examples = [
       "Delivered under extreme time pressure — signals efficiency within the 3.5-week timeline",
       "Built to be owned, not just delivered — open source, MIT licensed",
     ],
-    tags: ["Filterable dashboard", "World Bank partner", "Handover design", "Tight timeline", "Co-design"],
+    tags: ["Filterable dashboard", "World Bank partner", "Non-technical handover", "Fast delivery", "Civic tech"],
   },
   {
-    id: "powerbi", order: "03", priority: "Supporting evidence",
+    id: "powerbi", order: "03", priority: "Product 3",
     title: "Washington DC Crime Analysis", subtitle: "Power BI · Capstone Project · Group 3",
     priorityColor: "bg-amber-500 text-white",
     summary: "An interactive Power BI dashboard analysing 3,866 crime records across Washington DC — featuring geospatial hotspot mapping, time-of-day KPI analysis, Crime Severity Index, and neighbourhood cluster distribution. Demonstrates data visualisation fluency and analytical depth.",
@@ -49,7 +49,7 @@ const examples = [
       "Power BI proficiency — confirms familiarity with the tools referenced in the ToR",
       "Shows ability to read complex datasets and surface meaningful patterns",
     ],
-    tags: ["Power BI", "Geospatial viz", "KPI design", "Data analysis"],
+    tags: ["Power BI", "Geospatial viz", "Data analysis", "Dashboard design"],
   },
 ];
 
@@ -59,10 +59,10 @@ export default function SectionExamples() {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-24">
-      <div className="section-badge bg-teal-light text-teal-dark">Relevant examples</div>
-      <h2 className="text-4xl font-serif text-ink mb-4">Three products.<br /><span className="text-teal italic">All three matter here.</span></h2>
+      <div className="section-badge bg-teal-light text-teal-dark">Profile & experience</div>
+      <h2 className="text-4xl font-serif text-ink mb-4">Selected work.<br /><span className="text-teal italic">Relevant to this brief.</span></h2>
       <p className="text-gray-600 text-lg mb-10 max-w-2xl">
-        Each example is framed against the specific requirements in the Transform Health ToR — not just listed as past work.
+        Examples framed against the Transform Health ToR requirements. Full CV attached separately.
       </p>
 
       {/* Example tabs */}
@@ -94,9 +94,15 @@ export default function SectionExamples() {
 
           <p className="text-sm text-gray-700 leading-relaxed mb-5">{ex.summary}</p>
 
-          {ex.videoNote && (
-            <div className="callout callout-teal text-sm text-gray-600 mb-5">
-              <strong className="text-teal">📹 </strong>{ex.videoNote}
+          {ex.videoLink && (
+            <div className="mb-5">
+              <div className="text-xs font-semibold tracking-widest uppercase text-gray-700 mb-2">Admin dashboard walkthrough</div>
+              <iframe 
+                src="https://drive.google.com/file/d/17TNt35CkR-pn1wF9QJW5dmDgJPienuKZ/preview" 
+                className="w-full aspect-video rounded-lg border border-gray-200"
+                allow="autoplay"
+                title="Admin dashboard walkthrough"
+              />
             </div>
           )}
 
