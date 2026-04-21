@@ -21,5 +21,5 @@ export const NAV_SECTIONS = [
   { id: "directory", label: "Directory Demo" },
   { id: "questions", label: "Discovery Qs" },
   { id: "examples", label: "Profile" },
-  { id: "fee", label: "Fee & Timeline" },
+  // { id: "fee", label: "Fee & Timeline" },
 ];
