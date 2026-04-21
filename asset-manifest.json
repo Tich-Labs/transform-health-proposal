@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/transform-health-proposal/static/css/main.7d1054d8.css",
+    "main.js": "/transform-health-proposal/static/js/main.2ecde24b.js",
+    "index.html": "/transform-health-proposal/index.html",
+    "main.7d1054d8.css.map": "/transform-health-proposal/static/css/main.7d1054d8.css.map",
+    "main.2ecde24b.js.map": "/transform-health-proposal/static/js/main.2ecde24b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d1054d8.css",
+    "static/js/main.2ecde24b.js"
+  ]
+}

@@ -2,7 +2,7 @@
   "name": "women-leaders-dh",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://transform-health.github.io/women-leaders-dh",
+  "homepage": "https://Tich-Labs.github.io/transform-health-proposal",
   "dependencies": {
     "ajv": "^8.18.0",
     "d3-scale": "^4.0.2",
