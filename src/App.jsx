@@ -7,7 +7,7 @@ import SectionVisualisation from './components/SectionVisualisation';
 import SectionDirectory from './components/SectionDirectory';
 import SectionQuestions from './components/SectionQuestions';
 import SectionExamples from './components/SectionExamples';
-import SectionFee from './components/SectionFee';
+// import SectionFee from './components/SectionFee';
 import { NAV_SECTIONS } from './data';
 
 const SECTIONS = {
