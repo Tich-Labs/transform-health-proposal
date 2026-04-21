@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/women-leaders-dh/static/css/main.7d1054d8.css",
+    "main.js": "/women-leaders-dh/static/js/main.3ccfbe6b.js",
+    "index.html": "/women-leaders-dh/index.html",
+    "main.7d1054d8.css.map": "/women-leaders-dh/static/css/main.7d1054d8.css.map",
+    "main.3ccfbe6b.js.map": "/women-leaders-dh/static/js/main.3ccfbe6b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7d1054d8.css",
+    "static/js/main.3ccfbe6b.js"
+  ]
+}
