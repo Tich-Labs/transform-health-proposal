@@ -18,7 +18,7 @@ const SECTIONS = {
   directory: SectionDirectory,
   questions: SectionQuestions,
   examples: SectionExamples,
-  fee: SectionFee,
+  // fee: SectionFee,
 };
 
 export default function App() {
